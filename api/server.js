@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
@@ -11,7 +12,7 @@ const server = express();
 
 server.use(session({
   name: 'chocolatechip',
-  secret: 'keep it secret',
+  secret: 'process.env.SECRET',
   cookie: {
     maxAge: 1000 * 60 * 60,
     secure: false,
